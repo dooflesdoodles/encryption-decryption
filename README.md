@@ -24,6 +24,7 @@ You can use the following keywords to encrypt/decrypt text data:
 ##### Example1
 input:
 `java Main -data encryptme -key 9`
+
 expected output:
 `nwl{?y}vn`
 
