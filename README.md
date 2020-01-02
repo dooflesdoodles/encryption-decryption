@@ -13,19 +13,30 @@ Just run the Main.class
 You can use the following keywords to encrypt/decrypt text data:
 
 -key  [number from 0-2³¹-1 for shifting the current character]
+
 -mode [enc for encryption or dec for decryption]
+
 -data [text to be encrypted/decrypted]
+
 -in   [path to file to be encrypted/decrypted]
+
 -out  [filename in which the encrypted/decrypted text is written]
+
 
 ## Usage example
 input:
+
 java Main -data encryptme -key 9
+
 output:
+
 nwl{?y}vn
 
 input:
+
 java Main -data encryptme -key 9 -mode dec
+
 output:
+
 encryptme
 
