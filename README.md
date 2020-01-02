@@ -30,12 +30,14 @@ expected output:
 ##### Example2
 input:
 `java Main -data encryptme -key 9 -mode dec`
+
 expected output:
 `encryptme`
 
 ##### Example3
 input:
 `java Main -data encryptme -key 9 -mode dec -out exampleFile.txt`
+
 expected output:
 inside created exampleFile.txt: `encryptme`
 
