@@ -12,34 +12,30 @@ Just run the Main.class
 ## Keywords
 You can use the following keywords to encrypt/decrypt text data:
 
--key  [number from 0-2³¹-1 for shifting the current character]
+| Keyword       | -
+| ------------- |:-------------
+| -key          |number from 0-2³¹-1 for shifting each character
+| -mode         |enc for encryption or dec for decryption
+| -data         |text to be encrypted/decrypted
+| -in           |path to file to be encrypted/decrypted
+| -out          |filename in which the encrypted/decrypted text is written
 
--mode [enc for encryption or dec for decryption]
-
--data [text to be encrypted/decrypted]
-
--in   [path to file to be encrypted/decrypted]
-
--out  [filename in which the encrypted/decrypted text is written]
-
-
-## Usage example
+## Usage examples
+##### Example1
 input:
+`java Main -data encryptme -key 9`
+expected output:
+`nwl{?y}vn`
 
-java Main -data encryptme -key 9
-
-output:
-
-nwl{?y}vn
-
-
-
-
+##### Example2
 input:
+`java Main -data encryptme -key 9 -mode dec`
+expected output:
+`encryptme`
 
-java Main -data encryptme -key 9 -mode dec
-
-output:
-
-encryptme
+##### Example3
+input:
+`java Main -data encryptme -key 9 -mode dec -out exampleFile.txt`
+expected output:
+inside created exampleFile.txt: `encryptme`
 
