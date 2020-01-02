@@ -33,6 +33,7 @@ output:
 nwl{?y}vn
 
 
+
 input:
 
 java Main -data encryptme -key 9 -mode dec
