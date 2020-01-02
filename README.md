@@ -18,7 +18,7 @@ You can use the following keywords to encrypt/decrypt text data:
 | -mode         |enc for encryption or dec for decryption
 | -data         |text to be encrypted/decrypted
 | -in           |path to file to be encrypted/decrypted
-| -out          |filename in which the encrypted/decrypted text is written
+| -out          |path to output file to be encrypted/decrypted
 
 ## Usage examples
 ##### Example1
