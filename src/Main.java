@@ -8,9 +8,9 @@ public class Main {
         int key = 0;
         String output = "";
         String mode = "enc";
-        String data = null;
-        String in = null;
-        String out = null;
+        String data = "";
+        String in = "";
+        String out = "";
 
         for (int i = 0; i < args.length; i += 2) {
             if (args[i].equals("-mode")) {
@@ -26,7 +26,7 @@ public class Main {
             }
         }
 
-        if (data == null && in != null){
+        if (data == "" && in != ""){
             String path = in;
             try {
                 data = readFile(path);
@@ -77,7 +77,7 @@ public class Main {
             char shiftItem = (char) (item - key);
             output += shiftItem;
         }
-        if (out == null) {
+        if (out == "") {
             System.out.println(output);
         } else{
             writeFile(output, out);
@@ -89,7 +89,7 @@ public class Main {
             char shiftItem = (char) (item + key);
             output += shiftItem;
         }
-        if (out == null) {
+        if (out == "") {
             System.out.println(output);
         } else {
             writeFile(output, out);
