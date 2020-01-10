@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         int key = 0;
-        String mode = "enc";// runs in encryption mode if not specified
+        String mode = "enc";// if not specified run in encryption mode
         String output = "";
         String data = "";
         String in = "";
