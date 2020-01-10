@@ -26,7 +26,7 @@ public class Main {
             }
         }
 
-        if (data == "" && in != ""){
+        if (data.equals("") && !in.equals(""){
             String path = in;
             try {
                 data = readFile(path);
