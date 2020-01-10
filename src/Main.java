@@ -5,13 +5,15 @@ import java.nio.file.Paths;
 
 public class Main {
     public static void main(String[] args) {
+
         int key = 0;
+        String mode = "enc";// runs in encryption mode if not specified
         String output = "";
-        String mode = "enc";
         String data = "";
         String in = "";
         String out = "";
 
+        // loop over args & fill fields with content if keyword is found
         for (int i = 0; i < args.length; i += 2) {
             if (args[i].equals("-mode")) {
                 mode = args[i+1];
@@ -26,15 +28,17 @@ public class Main {
             }
         }
 
-        if (data.equals("") && !in.equals(""){
+        // read file into data-string
+        if ( data.equals("") && !in.equals("") ){
             String path = in;
             try {
                 data = readFile(path);
             } catch (IOException e) {
-                System.out.println("Cannot read file: " + e.getMessage());
+                System.out.println( "Cannot read file: " + e.getMessage() );
             }
         }
 
+        // check if program should run in encryption oder decryption mode
         switch (mode) {
             case "enc":
                 getEncryption(data, key, output, out);
@@ -48,10 +52,12 @@ public class Main {
         }
     }
 
+    // read file & return it's content
     public static String readFile(String fileName) throws IOException {
-        return new String(Files.readAllBytes(Paths.get(fileName)));
+        return new String(Files.readAllBytes( Paths.get(fileName) ));
     }
 
+    // write file
     public static void writeFile(String output, String out){
         File file = new File(out);
         FileWriter writer = null;
@@ -72,11 +78,16 @@ public class Main {
         }
     }
 
+    // decyript
     public static void getDecryption(String data, int key, String output, String out) {
+
+        // loop over char array of data and shift each by the given key as unicode
         for (char item : data.toCharArray()) {
             char shiftItem = (char) (item - key);
             output += shiftItem;
         }
+
+        // write to console or to file
         if (out == "") {
             System.out.println(output);
         } else{
@@ -84,11 +95,16 @@ public class Main {
         }
     }
 
+    // encyript
     public static void getEncryption(String data, int key, String output, String out) {
+
+        // loop over char array of data and shift each by the given key as unicode
         for (char item : data.toCharArray()) {
             char shiftItem = (char) (item + key);
             output += shiftItem;
         }
+
+        // write to console or to file
         if (out == "") {
             System.out.println(output);
         } else {
