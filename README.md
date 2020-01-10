@@ -26,24 +26,24 @@ You can use the following keywords to encrypt/decrypt text data:
 4. If there are both -data and -in arguments, the program prefers -data over -in.
 
 ## Usage examples
-##### Example1
+##### Example1 - encryption to the console
 input:
 `java Main -data encryptme -key 9`
 
 expected output:
 `nwl{?y}vn`
 
-##### Example2
+##### Example2 - decryption to the console
 input:
 `java Main -data nwl{?y}vn -key 9 -mode dec`
 
 expected output:
 `encryptme`
 
-##### Example3
+##### Example3 - encryption to file
 input:
-`java Main -data nwl{?y}vn -key 9 -mode dec -out exampleFile.txt`
+`java Main -data encryptme -key 9 -out exampleFile.txt`
 
 expected output:
-inside created exampleFile.txt: `encryptme`
+inside created exampleFile.txt: `nwl{?y}vn`
 
