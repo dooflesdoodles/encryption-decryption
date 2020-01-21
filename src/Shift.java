@@ -1,9 +1,12 @@
 public class Shift implements Algorithm{
-    public String decrypt(){
-        return "decrypt shift";
+
+    public String decrypt(String data, int key, String output, String out, String alg) {
+        // do something
+        return output;
     }
 
-    public String encrypt(){
-        return "encrypt shift";
+    public String encrypt(String data, int key, String output, String out, String alg) {
+        // do something
+        return output;
     }
 }

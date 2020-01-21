@@ -7,32 +7,30 @@ public class Main {
     public static void main(String[] args) {
 
         String mode = "";
-        //String data = "";
-        //String in   = "";
-        String alg  = "";
-
-        //String output = "";
-        //String out = "";
-        //int key = 0;
+        String data = "";
+        String in = "";
+        String alg = "";
+        String output = "";
+        String out = "";
+        int key = 0;
 
         // loop over args & fill fields with given content if keyword is found
         for (int i = 0; i < args.length; i += 2) {
             if (args[i].equals("-mode")) {
                 mode = args[i+1];
             } else if (args[i].equals("-key")) {
-                //key = Integer.parseInt(args[i+1]);
+                key = Integer.parseInt(args[i+1]);
             } else if (args[i].equals("-data")) {
-                //data = args[i+1];
+                data = args[i+1];
             } else if (args[i].equals("-in")) {
-                //in = args[i + 1];
+                in = args[i + 1];
             } else if (args[i].equals("-out")) {
-                //out = args[i + 1];
+                out = args[i + 1];
             } else if (args[i].equals("-alg")) {
                 alg = args[i + 1];
             }
         }
 
-        /*
         // read file into data-string
         if ( data.equals("") && !in.equals("") ){
             String path = in;
@@ -42,7 +40,6 @@ public class Main {
                 System.out.println( "Cannot read file: " + e.getMessage() );
             }
         }
-         */
 
         // check for algorithm
         Algorithm algorithm;
@@ -58,17 +55,28 @@ public class Main {
         // check if program should run in encryption oder decryption mode
         switch (mode) {
             case "dec":
-                System.out.println(algorithm.decrypt());
-                //algorithm.decrypt(data, key, output, out, alg);
-                break;
+
+                // write to console or to file
+                if (out.equals("")) {
+                    System.out.println(algorithm.decrypt(data, key, output, out, alg));
+                    break;
+                }else{
+                    writeFile(algorithm.encrypt(data, key, output, out, alg), out);
+                    break;
+                }
             default:
-                System.out.println(algorithm.encrypt());
-                //algorithm.encrypt(data, key, output, out, alg);
-                break;
+
+                // write to console or to file
+                if (out.equals("")) {
+                    System.out.println(algorithm.encrypt(data, key, output, out, alg));
+                    break;
+                }else{
+                    writeFile(algorithm.encrypt(data, key, output, out, alg), out);
+                    break;
+                }
         }
     }
 
-    /*
     // read file & return it's content
     public static String readFile(String fileName) throws IOException {
         return new String(Files.readAllBytes( Paths.get(fileName) ));
@@ -97,6 +105,5 @@ public class Main {
             e.printStackTrace();
         }
     }
-     */
 
 }
