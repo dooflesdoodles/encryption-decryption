@@ -61,7 +61,7 @@ public class Main {
                     System.out.println(algorithm.decrypt(data, key, output, out, alg));
                     break;
                 }else{
-                    writeFile(algorithm.encrypt(data, key, output, out, alg), out);
+                    writeFile(algorithm.decrypt(data, key, output, out, alg), out);
                     break;
                 }
             default:
