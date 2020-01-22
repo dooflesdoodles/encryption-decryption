@@ -10,7 +10,6 @@ public class Main {
         String data = "";
         String in = "";
         String alg = "";
-        String output = "";
         String out = "";
         int key = 0;
 
@@ -52,26 +51,26 @@ public class Main {
                 break;
         }
 
-        // check if program should run in encryption oder decryption mode
+        // check if program should run in encryption or decryption mode
         switch (mode) {
             case "dec":
 
                 // write to console or to file
                 if (out.equals("")) {
-                    System.out.println(algorithm.decrypt(data, key, output, out, alg));
+                    System.out.println(algorithm.decrypt(data, key));
                     break;
                 }else{
-                    writeFile(algorithm.decrypt(data, key, output, out, alg), out);
+                    writeFile(algorithm.decrypt(data, key), out);
                     break;
                 }
             default:
 
                 // write to console or to file
                 if (out.equals("")) {
-                    System.out.println(algorithm.encrypt(data, key, output, out, alg));
+                    System.out.println(algorithm.encrypt(data, key));
                     break;
                 }else{
-                    writeFile(algorithm.encrypt(data, key, output, out, alg), out);
+                    writeFile(algorithm.encrypt(data, key), out);
                     break;
                 }
         }
