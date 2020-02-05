@@ -10,7 +10,7 @@ Just compile and run the Main.java
 ## Keywords
 You can use the following keywords to encrypt/decrypt text data:
 
-| Keyword       | -
+| Keyword       | Value
 | ------------- |:-------------
 | -key          |number from 0-2³¹-1 for shifting each character
 | -mode         |enc for encryption or dec for decryption
